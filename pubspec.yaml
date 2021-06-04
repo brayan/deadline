@@ -29,6 +29,8 @@ dependencies:
   # Local cache
   shared_preferences: ^0.5.3+4
 
+  flutter_datetime_picker: 1.2.5
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -1,21 +1,28 @@
-import 'package:deadline/features/deadline/presentation/deadlines.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(BytebankApp());
+import 'core/presentation/dracula_theme.dart';
+import 'features/deadline/presentation/deadlines.dart';
 
-class BytebankApp extends StatelessWidget {
+void main() => runApp(App());
+
+class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        primaryColor: Color(0xFF282A36),
-        accentColor: Color(0xffff79c6),
-        buttonTheme: ButtonThemeData(
-          buttonColor: Colors.blueAccent[700],
-          textTheme: ButtonTextTheme.primary,
-        ),
-      ),
+      theme: _getThemeData(),
       home: DeadlinesWidget(),
     );
   }
+
+  ThemeData _getThemeData() {
+    return ThemeData(
+      primaryColor: DraculaTheme.background,
+      accentColor: DraculaTheme.pink,
+      buttonTheme: ButtonThemeData(
+        buttonColor: DraculaTheme.currentLine,
+        textTheme: ButtonTextTheme.primary,
+      ),
+    );
+  }
+
 }

@@ -17,10 +17,7 @@ class DeadlinesState extends State<DeadlinesWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFF282A36),
-        appBar: AppBar(
-          elevation: 0.0,
-          title: const Text('Deadlines'),
-        ),
+        appBar: _buildAppBar(),
         body: ListView.builder(
           itemCount: widget._deadlines.length,
           itemBuilder: (context, index) {
@@ -29,9 +26,19 @@ class DeadlinesState extends State<DeadlinesWidget> {
           },
         ),
         floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
+          child: Icon(Icons.add, color: Colors.white),
           onPressed: () => onClickAddDeadline(context),
         ));
+  }
+
+  AppBar _buildAppBar() {
+    return AppBar(
+      textTheme: TextTheme(
+          headline6: TextStyle(fontSize: 20.0)
+      ),
+      elevation: 0.0,
+      title: const Text('Deadlines'),
+    );
   }
 
   void onClickAddDeadline(context) {
